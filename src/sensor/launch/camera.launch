@@ -1,0 +1,8 @@
+<launch>
+    <!-- 퍼블리셔 노드 실행 -->
+    <node pkg="sensor" type="camera_pub.py" name="camera_publisher_node" output="screen" />
+
+    <!-- 구독자 노드 실행 -->
+    <node pkg="sensor" type="camera_sub.py" name="camera_subscriber_node" output="screen" />
+</launch>
+

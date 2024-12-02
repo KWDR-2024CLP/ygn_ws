@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- GPS 관련 노드 실행 -->
+  <include file="$(find sensor)/launch/gps.launch" />
+
+  <!-- IMU 관련 노드 실행 -->
+  <include file="$(find sensor)/launch/iahrs_driver.launch" />
+
+  <!-- GPS 계산 스크립트 실행 -->
+  <node name="gps_calculator" pkg="sensor" type="gps_cal.py" output="screen" />
+</launch>
+

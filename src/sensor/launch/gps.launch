@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- f9p.yaml 파일 경로 설정 -->
+  <arg name="param_file_name"     default="zed_f9p" doc="Default param file name, e.g. f9p" />
+  <arg name="param_file_dir"      doc="Directory to look for $(arg param_file_name).yaml"
+                                  default="$(find sensor)/config" />
+
+  <arg name="node_name"           doc="Name of this node"
+                                  default="ublox" />
+  <arg name="output"              default="screen" />
+  <arg name="respawn"             default="true" />
+  <arg name="respawn_delay"       default="30" />
+  <arg name="clear_params"        default="true" />
+
+  <node pkg="ublox_gps" type="ublox_gps" name="$(arg node_name)"
+        output="$(arg output)"
+        clear_params="$(arg clear_params)"
+        respawn="$(arg respawn)"
+        respawn_delay="$(arg respawn_delay)">
+    <!-- f9p.yaml 파일 로드 -->
+    <rosparam command="load"
+              file="$(arg param_file_dir)/$(arg param_file_name).yaml" />
+  </node>
+</launch>
+

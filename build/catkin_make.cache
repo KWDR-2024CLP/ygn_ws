@@ -1,0 +1,2 @@
+iahrs_driver:sensor:ublox/ublox:ublox/ublox_gps:ublox/ublox_msg_filters:ublox/ublox_msgs:ublox/ublox_serialization
+-DCATKIN_DEVEL_PREFIX=/home/l2y/ygn_ws/devel -DCMAKE_INSTALL_PREFIX=/home/l2y/ygn_ws/install -G Unix Makefiles
